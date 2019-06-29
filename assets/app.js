@@ -1,43 +1,48 @@
-var interest = "obama"
-var today = moment();
-var newURL = "https://newsapi.org/v2/everything?q=" + interest + "&from=" + today + "&to=" + today + "&pageSize=5&apiKey=c9e89d507443488db8362699ff4e48d0"
+var firebaseConfig = {
+    apiKey: "AIzaSyA-NazdWi3OJCu7kEEDvfWunqnjHf9nxZQ",
+    authDomain: "my-personal-assistant-9bc3f.firebaseapp.com",
+    databaseURL: "https://my-personal-assistant-9bc3f.firebaseio.com",
+    projectId: "my-personal-assistant-9bc3f",
+    storageBucket: "",
+    messagingSenderId: "601556373821",
+    appId: "1:601556373821:web:bb428ce5994e08ee"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
 
-  $.ajax({
-    url: newURL,
-    method: "GET"
-  }).then(function (news) {
-    console.log(news);
- 
-  })
+var PARef = firebase.database().ref('profiledetail');
 
 
-  var zipCode = "20904";
-  var weatherURL = "http://api.apixu.com/v1/current.json?key=ba7146ae0968498ab5b210703192706&q="+zipCode;
-
+$('.chekbox').on('change', function() {
   
-  $.ajax({
-    url: weatherURL,
-    method: "GET"
-  }).then(function (weather) {
-    console.log(weather);
- 
-  })
+    if($('.chekbox:checked').length > 3) {
+        this.checked = false;
+    }
+ });
+$("#submit").on("click", function (event) {
+    event.preventDefault();
 
-  
-  
-  var cuisines = "India" + "restaurant"
-  var foodURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?query="+cuisines+"in"+zipCode+"&key=AIzaSyBv-S9r5Yymml6GvQDXOIs9_siaOR5b0j0"
-  
-  
+    var name = $("#name").val()
+    var zip = $("#zip").val()
+    var favorite = [];
+            $.each($("input[name='food']:checked"), function(){            
+                favorite.push($(this).val());
+            });
+    var newsFeed = $("#newsFeed").val()
+    var newFeedArry= newsFeed.split(',');
+    
+    PARef.push().set({
+    profilename: name,
+    zip: zip,
+    cuisines1: favorite[0],
+    cuisines2: favorite[1],
+    cuisines3: favorite[2],
+    newsFeed0: newFeedArry[0],
+    newsFeed1: newFeedArry[1],
+    newsFeed2: newFeedArry[2],
 
-
-  
-  $.ajax({
-    url: foodURL,
-    method: "GET"
-  }).then(function (food) {
-    console.log(food);
- 
-  })
+    })
+    $("#contactForm")[0].reset();
+});
 
 

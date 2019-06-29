@@ -1,34 +1,40 @@
 .table{
     text-align: center;
-    background-color: gray;
+    background-color: #92bde7;
   -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
   -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
   animation-name: example;
-  animation-duration: 4s;
+  animation-duration: 30s;
   font-family: Arial, Helvetica, sans-serif;
+  
+    color: blue;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  
+}
     
     
-  }
+  
   /* Safari 4.0 - 8.0 */
   @-webkit-keyframes example {
-    0%   {background-color:burlywood;}
-    25%  {background-color: purple;}
+    0%   {background-color: blue;}
+    25%  {background-color: whitesmoke;}
     50%  {background-color: pink;}
-    75%  {background-color: purple;}
+    75%  {background-color:turquoise;}
     100% {background-color: hotpink;}
   }
   
   /* Standard syntax */
   @keyframes example {
-    0%   {background-color: burlywood;}
-    25%  {background-color: purple;}
+    0%   {background-color: blue;}
+    25%  {background-color: whitesmoke;}
     50%  {background-color: pink;}
-    75%  {background-color: purple;}
+    75%  {background-color: turquoise;}
     100% {background-color: hotpink;}
+    
   }
   
   .introduction{
-      background-color: gray;
+      background-color:black;
       max-width:1170px;
     margin-left:auto;
     margin-right:auto;
@@ -46,7 +52,8 @@
   }
   
   body{
-    background:#92bde7;
+      background-image: url(../assets/Images/background-modern-computer-backgrounds-textures-306209-1024.jpg);
+    /* background:#92bde7; */
     color:#485e74;
     line-height:1.6;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -139,7 +146,7 @@
     transition: background-color 2s ease-out;
   }
   
-  /* LARGE SCREENS */
+  /* LARGE SCREENS Mobile Responsive Code */
   @media(min-width:700px){
     .wrapper{
       display: grid;
@@ -156,4 +163,42 @@
     .company-info h3, .company-info ul, .brand{
       text-align: left;
     }
+  }
+
+  #submit{
+    
+        background-color: #92bde7;
+        border: none;
+        color: black;
+        padding: 16px 32px;
+        text-align: center;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition: 0.3s;
+      }
+      
+      #submit:hover {
+        background-color: blue;
+        color: white;
+      }
+
+  h3{
+    
+        color: white;
+        text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+        text-align: center;
+        font-size: 180%;
+      
+  }
+
+  li{
+      color: blue;
+      font-size: 130%;
+      font-weight: bold;
+  }
+  #contactForm{
+    font-size: 120%;
+    font-weight: bold;
+    color: black;
+
   }

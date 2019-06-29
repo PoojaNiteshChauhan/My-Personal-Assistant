@@ -11,6 +11,7 @@
   <script src="https://www.gstatic.com/firebasejs/6.2.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
 
 </head>
@@ -32,15 +33,16 @@
       <div class="company-info">
         <h3>My Personal Assistant</h3>
         <ul>
-          <li><i class="fa "></i> My Personal Assistant is a smart Application, 
+          <li><i class="fa "></i> <span> "Personal Assistant is a smart Application, 
             offering personalized guidance for every step of the way.
             From resturant recommendations based on favorite cuisines just for you, 
             Weather report and latest news of your choice,My-personal-Assistant has news
              sources from all across the world, so it’s likely you’ll be able to find
             your favorite sites and publications.The app can set up a daily briefing
-             to give you the most important stories of the day</li>
+             to give you the most important stories of the day"</li></span>
         </ul>
       </div>
+    
       <div class="contact">
         <h3>Setup Profile</h3>
         
@@ -51,23 +53,24 @@
           
           
             <label>Zip</label>
-            <input type="text" name="company" id ="company">
+            <input type="text" name="Zip" id ="zip">
           
           
-            <label>Favorite Cusines (Select up to 3 options)</label><br>
+            <label>Favorite Cusines 
+                (Select up to 3 options)</label><br>
             
-              <input class = "chekbox" type="checkbox" name="food" value="Indian"> Indian
-              <input class = "chekbox"  type="checkbox" name="food" value="Asian"> Asian
-              <input class = "chekbox"  type="checkbox" name="food" value="Italian"> Italian
-              <input class = "chekbox"  type="checkbox" name="food" value="Jamican"> Jamican
-              <input class = "chekbox"  type="checkbox" name="food" value="African"> African
-              <input class = "chekbox" type="checkbox" name="food" value="American"> American
-              <input class = "chekbox" type="checkbox" name="food" value="MiddleEastern"> Middle Eastern
+              <input class = "chekbox" type="checkbox" name="food" value="Indian" id="indian"> Indian
+              <input class = "chekbox"  type="checkbox" name="food" value="Asian"id ="asian"> Asian
+              <input class = "chekbox"  type="checkbox" name="food" value="Italian"id ="italian"> Italian
+              <input class = "chekbox"  type="checkbox" name="food" value="Jamican"id="jamican"> Jamican
+              <input class = "chekbox"  type="checkbox" name="food" value="African" id="african"> African
+              <input class = "chekbox" type="checkbox" name="food" value="American"id="american"> American
+              <input class = "chekbox" type="checkbox" name="food" value="MiddleEastern"id="middleEast"> Middle Eastern
             
           
           
-            <label> New Feed ( Seperate topics by commans ',')</label>
-            <input type="text" name="phone" id = "phone">
+            <label> News Feed ( Seperate topics by commans ',')</label>
+            <input type="text" name="news" id = "newsFeed">
           
           
           
@@ -80,16 +83,7 @@
   </div>
 
 
-<script src = "main.js"></script>
-
-<script>
-$('.chekbox').on('change', function() {
-  
-   if($('.chekbox:checked').length > 3) {
-       this.checked = false;
-   }
-});
-</script>
+<script src = "../My-Personal-Assistant/assets/app.js"></script>
 
 
 
