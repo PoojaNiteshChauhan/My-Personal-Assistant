@@ -13,6 +13,8 @@ var firebaseConfig = {
 var PARef = firebase.database().ref('profiledetail');
 
 
+
+
 var interest = "obama"
 
 var today = moment();
@@ -20,21 +22,19 @@ var today = moment();
 getProfileInfo();
 
 function getProfileInfo() {
-    
-    var profileName;
-    var zipCode;
+    let key = localStorage.getItem('profileKey');
+    PARef.once("value", function(snapshot) {
+        data = snapshot.val();
+        let currentProfile = data[key];
+        console.log(currentProfile);
+        
+        let profileName = currentProfile.profilename;
+        let zipCode = currentProfile.zip;
+        welcomeandshowWeather(profileName,zipCode); 
+        showNewsFeed(currentProfile.newsFeed[0],currentProfile.newsFeed[0],currentProfile.newsFeed[0])
 
-    PARef.on("child_added", function (snapshot) {
-
-    profileName = snapshot.val().profilename;
-    zipCode = snapshot.val().zip;
-    welcomeandshowWeather(profileName,zipCode); 
-    showNewsFeed(snapshot.val().newsFeed0,snapshot.val().newsFeed1,snapshot.val().newsFeed2)
-    }
-    ,function (errorObject) {
-    
-    console.log("The read failed: " + errorObject.code);
-    })
+        // do some stuff once
+      });
 
 }
 
@@ -47,8 +47,8 @@ function welcomeandshowWeather(name,zip)
         method: "GET"
         }).then(function (weather) {
         console.log(weather.current);
-        $("#Weather").prepend("<h1> Welcome  " + name)
-        $("#Weather").append("<h1> Your Current Tempreture is " + weather.current.feelslike_f + " °F ")
+        $("#Weather").append("<h1> Welcome  " + name)
+        $("#Weather").append("<h1> Your Current Temperature is " + weather.current.feelslike_f + " °F ")
 
         })
 
@@ -70,17 +70,20 @@ function showNewsFeed(newsFeed0,newsFeed1,newsFeed2){
     $("#News").append(
         '<tr scope="row">'
         + '<td>' + news1.articles[0].title + '</td>'
-        + '<td> <a href="' + news1.articles[0].url +  '" target="_blank"> Link</td>'
+        + '<td> <a href="' + news1.articles[0].url +  '" target="_blank">' 
+        + '<img src =' + news1.articles[0].urlToImage +' ></td>'
         + '</tr>')
     $("#News").append(
         '<tr scope="row">'
         + '<td>' + news1.articles[1].title + '</td>'
-        + '<td> <a href="' + news1.articles[1].url +  '" target="_blank"> Link</td>'
+        + '<td> <a href="' + news1.articles[1].url +  '" target="_blank">' 
+        + '<img src =' + news1.articles[1].urlToImage +' ></td>'
         + '</tr>')
     $("#News").append(
         '<tr scope="row">'
         + '<td>' + news1.articles[2].title + '</td>'
-        + '<td> <a href="' + news1.articles[2].url +  '" target="_blank"> Link</td>'
+        + '<td> <a href="' + news1.articles[2].url +  '" target="_blank">' 
+        + '<img src =' + news1.articles[2].urlToImage +' ></td>'
         + '</tr>')
 
     

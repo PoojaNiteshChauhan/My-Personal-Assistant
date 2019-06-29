@@ -1,3 +1,39 @@
+
+body,html {
+  background: #007bff;
+  height:100%;
+}
+h1 {
+  height:auto;
+  display:table;
+  width: 80%;
+  text-align:center;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  top: 0;left: 0;bottom: 0;right: 0;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  font-weight:300;
+  font-size:3em;
+}
+
+h2 {
+    position: fixed;
+    text-align:center;
+    top:10px;
+    right:20px;
+    color:white;
+    font-size: 20px;
+    font-family: Roboto;
+    font-weight: normal;
+		z-index:999;
+   
+  }
+  span{font-size:15px;font-weight: lighter;}
+  a{color:white;font-size:15px;padding: 0 30px}
+
+
 .table{
     text-align: center;
     background-color: #92bde7;
@@ -52,8 +88,8 @@
   }
   
   body{
-      background-image: url(../assets/Images/background-modern-computer-backgrounds-textures-306209-1024.jpg);
-    /* background:#92bde7; */
+      /* background-image: url(../assets/Images/background-modern-computer-backgrounds-textures-306209-1024.jpg);
+    background:#92bde7; */
     color:#485e74;
     line-height:1.6;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -80,11 +116,11 @@
     color:#fff;
   }
   
-  .wrapper{
+  .wrapper, .wrapper1{
     box-shadow: 0 0 20px 0 rgba(72,94,116,0.7);
   }
   
-  .wrapper > *{
+  .wrapper, .wrapper1 > *{
     padding: 1em;
   }
   
@@ -153,16 +189,22 @@
       grid-template-columns: 1fr 2fr;
     }
     .wrapper1{
-      grid-template-columns: 1fr 2fr;
+        display: grid;
+        
     }
   
-    .wrapper > *{
+    .wrapper, .wrapper1 > *{
       padding:2em;
     }
   
     .company-info h3, .company-info ul, .brand{
       text-align: left;
     }
+  }
+  img{
+    height: 100px;
+    widows: 100px;
+
   }
 
   #submit{
@@ -188,17 +230,44 @@
         text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
         text-align: center;
         font-size: 180%;
+        padding: 15PX;
       
   }
 
   li{
-      color: blue;
-      font-size: 130%;
+      color: black;
+      font-size: 150%;
       font-weight: bold;
+      text-align: center;
+      padding: 20px;
   }
   #contactForm{
     font-size: 120%;
     font-weight: bold;
     color: black;
+    padding: 20px;
 
+  }
+
+  #Weather{
+      background-color: lightblue;
+      font-size: 120%;
+    font-weight: bold;
+    color: black;
+    
+  }
+
+  #News{
+    background-color: lightblue;
+    font-size: 120%;
+    font-weight: bold;
+    color: black;
+      
+  }
+
+  #Eatout{
+      background-color: lightblue;
+      font-size: 120%;
+    font-weight: bold;
+    color: black;
   }
