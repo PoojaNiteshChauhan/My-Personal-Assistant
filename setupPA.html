@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Setup My Personal Assistant</title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
+  <link rel="stylesheet" href="../My-Personal-Assistant/assets/PA.css">
+  <script src="https://www.gstatic.com/firebasejs/6.2.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
+
+  <link href='https://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
+  <script src="https://ricostacruz.com/jquery.transit/jquery.transit.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+  <link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet">
+  <link href="../My-Personal-Assistant/assets/star.css" rel='stylesheet' type='text/css'>
+
+
+
+
+</head>
+
+<body>
+
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+
+  
+    <div class="wrapper1 animated bounceInRight">
+      <h1 class="table ">
+        Setup My Personal Assistant
+      </h1>
+    </div>
+  
+  <div class="container">
+
+    <div class="wrapper animated bounceInLeft">
+      <div class="company-info">
+        <h3>My Personal Assistant</h3>
+        <ul>
+          <li><i class="fa "></i> <span> "Personal Assistant is a smart Application,
+              offering personalized guidance for every step of the way.
+              From resturant recommendations based on favorite cuisines just for you,
+              Weather report and latest news of your choice,My-personal-Assistant has news
+              sources from all across the world, so it’s likely you’ll be able to find
+              your favorite sites and publications.The app can set up a daily briefing
+              to give you the most important stories of the day"</li></span>
+        </ul>
+      </div>
+
+      <div class="contact">
+        <h3>Setup Profile</h3>
+
+        <form id="contactForm">
+
+          <label>Name</label>
+          <input type="text" name="name" id="name">
+
+
+          <label>Zip</label>
+          <input type="text" name="Zip" id="zip">
+
+
+          <label>Favorite Cusines
+            (Select up to 3 options)</label><br>
+
+          <input class="chekbox" type="checkbox" name="food" value="Indian" id="indian"> Indian
+          <input class="chekbox" type="checkbox" name="food" value="Asian" id="asian"> Asian
+          <input class="chekbox" type="checkbox" name="food" value="Italian" id="italian"> Italian
+          <input class="chekbox" type="checkbox" name="food" value="Jamican" id="jamican"> Jamican
+          <input class="chekbox" type="checkbox" name="food" value="African" id="african"> African
+          <input class="chekbox" type="checkbox" name="food" value="American" id="american"> American
+          <input class="chekbox" type="checkbox" name="food" value="MiddleEastern" id="middleEast"> Middle Eastern
+
+
+
+          <label> News Feed ( Seperate topics by commans ',')</label>
+          <input type="text" name="news" id="newsFeed">
+
+
+
+          <p class="full">
+            <button type="submit" id="submit">Submit</button>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="../My-Personal-Assistant/assets/setupPA.js"></script>
+
+
+
+
+
+
+</body>
+
+
+</html>
