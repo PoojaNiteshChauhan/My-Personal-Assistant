@@ -73,6 +73,7 @@ function getProfileInfo() {
 
 function welcomeandshowWeather(name, zip) {
     var zipCode = zip;
+    
     var weatherURL = "https://api.apixu.com/v1/current.json?key=ba7146ae0968498ab5b210703192706&q=" + zipCode;
     $.ajax({
         url: weatherURL,
