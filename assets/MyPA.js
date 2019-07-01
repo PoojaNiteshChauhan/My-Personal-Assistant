@@ -51,10 +51,8 @@ var myVar = setInterval(function () {
 
             $("#dialog").dialog('close');
             welcomeandshowWeather(currentProfileName, currentProfileZip);
-            //showNewsFeed(currentProfileNew)
-            //showResturants(currentProfileFood, currentProfileZip)
-
-
+            showNewsFeed(currentProfileNew)
+            showResturants(currentProfileFood, currentProfileZip)
         })
         clearInterval(myVar);
     });
@@ -119,7 +117,7 @@ function showNewsFeed(newsFeed) {
     console.log(newsFeed)
     $("#News").append(
         '<thead scope = "row">'
-        + '<th> New </th>'
+        + '<th > News </th>'
         + '<th> Link </th>'
         + '</thead>'
     );
@@ -156,10 +154,10 @@ function showResturants(cuisines, zip) {
     console.log(cuisines, zip)
     $("#Eatout").append(
         '<thead scope = "row">'
-        + '<th> Name </th>'
-        + '<th> Address </th>'
-        + '<th> Rating </th>'
-        + '</thead>'
+        + '<th > Name </th>'
+        + '<th > Address </th>'
+        + '<th > Rating </th>'
+        + '</thead> <br> <br>'
     );
     for (i = 0; i < cuisines.length; i++) {
         var foodURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + cuisines[i] + "+restaurants+in+" + zip + "&key=AIzaSyBv-S9r5Yymml6GvQDXOIs9_siaOR5b0j0"
@@ -178,14 +176,9 @@ function showResturants(cuisines, zip) {
                     + '<td>' + food.results[i].name + '</td>'
                     + '<td> ' + food.results[i].formatted_address + '</td>'
                     + '<td>' + food.results[i].rating + ' </td>'
-                    + '</tr>')
+                    + '<br></tr>')
             }
         }
         )
-
-
-
-
-
     }
 }
